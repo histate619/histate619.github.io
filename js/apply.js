@@ -1,8 +1,8 @@
-import { CONFIG, TABLE, BUCKET, isConfigured } from '../config.js?v=20261009085625'
-import { STRINGS, pickLanguage, saveLanguage } from './i18n.js?v=20261009085625'
-import { parsePower, formatPower } from './power.js?v=20261009085625'
-import { compressImage } from './image.js?v=20261009085625'
-import { supabase } from './client.js?v=20261009085625'
+import { CONFIG, TABLE, BUCKET, isConfigured } from '../config.js?v=20261009090020'
+import { STRINGS, pickLanguage, saveLanguage } from './i18n.js?v=20261009090020'
+import { parsePower, formatPower } from './power.js?v=20261009090020'
+import { compressImage } from './image.js?v=20261009090020'
+import { supabase } from './client.js?v=20261009090020'
 
 const $ = id => document.getElementById(id)
 let lang = pickLanguage()
@@ -27,7 +27,7 @@ const FIELDS = [
   { group: 'groupPower', name: 'third_march_power', label: 'march3', type: 'power' },
   { group: 'groupPower', name: 'kill_count', label: 'killCount', type: 'power', required: true, hint: 'killHint' },
   { group: 'groupPower', name: 'main_faction', label: 'mainFaction', type: 'choice', required: true,
-    options: s => ({ ...FACTIONS, ...s.factionOptions }) },
+    options: () => FACTIONS },
   { group: 'groupPlay', name: 'active_hours', label: 'activeHours', type: 'text', required: true, max: 60, hint: 'activeHoursHint' },
   { group: 'groupPlay', name: 'leadership', label: 'leadership', type: 'choice', required: true, options: s => s.leadershipOptions },
   { group: 'groupPlay', name: 'participation', label: 'participation', type: 'choice', required: true, full: true,

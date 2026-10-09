@@ -1,9 +1,9 @@
-import { CONFIG, TABLE, BUCKET, isConfigured } from '../config.js?v=20261009085625'
-import { supabase } from './client.js?v=20261009085625'
-import { formatPower } from './power.js?v=20261009085625'
-import { toCsv } from './csv.js?v=20261009085625'
-import { pickLanguage, saveLanguage } from './i18n.js?v=20261009085625'
-import { ADMIN_STRINGS } from './admin-i18n.js?v=20261009085625'
+import { CONFIG, TABLE, BUCKET, isConfigured } from '../config.js?v=20261009090020'
+import { supabase } from './client.js?v=20261009090020'
+import { formatPower } from './power.js?v=20261009090020'
+import { toCsv } from './csv.js?v=20261009090020'
+import { pickLanguage, saveLanguage } from './i18n.js?v=20261009090020'
+import { ADMIN_STRINGS } from './admin-i18n.js?v=20261009090020'
 
 const $ = id => document.getElementById(id)
 // 語言偏好與申請頁共用

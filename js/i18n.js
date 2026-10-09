@@ -1,4 +1,4 @@
-import { CONFIG } from '../config.js?v=20261009085625'
+import { CONFIG } from '../config.js?v=20261009090020'
 
 export const STRINGS = {
   'zh-TW': {
@@ -30,7 +30,6 @@ export const STRINGS = {
     participation: '伺服器／聯盟活動參與度', leadership: '曾擔任聯盟管理',
     participationOptions: { very: '非常活躍：幾乎每個活動都參加', active: '活躍：主要活動大多參加', moderate: '普通：有空就參加', occasional: '偶爾：只參加部分活動', rare: '很少參加' },
     leadershipOptions: { r5: 'R5', r4: 'R4', none: '沒有當過' },
-    factionOptions: { none: '沒有固定兵種', unknown: '不清楚' },
     agreeRules: n => `我願意遵守 ${n} 伺服器規則、NAP（互不侵犯協定）與聯盟規定`, mustAgree: '要勾選同意才能送出',
     username: '遊戲名稱', gameId: '遊戲 ID', currentState: '目前所在州', currentClan: '目前聯盟',
     preferredClan: '第一志願', backupClan: '第二志願',
@@ -70,7 +69,6 @@ export const STRINGS = {
     participation: 'Server / alliance event participation', leadership: 'Alliance leadership experience',
     participationOptions: { very: 'Very active: almost all events', active: 'Active: most major events', moderate: 'Moderate: when available', occasional: 'Occasional: selected events only', rare: 'Rarely take part' },
     leadershipOptions: { r5: 'R5', r4: 'R4', none: 'None' },
-    factionOptions: { none: 'No faction', unknown: "I don't know" },
     agreeRules: n => `I will follow State ${n}'s rules, NAP and alliance policies`, mustAgree: 'Tick the box to agree before sending',
     username: 'In-game name', gameId: 'In-game ID', currentState: 'Current state', currentClan: 'Current alliance',
     preferredClan: 'First choice', backupClan: 'Second choice',
