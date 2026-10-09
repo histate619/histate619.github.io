@@ -1,4 +1,4 @@
-import { CONFIG } from '../config.js?v=20261009101303'
+import { CONFIG } from '../config.js?v=20261010021826'
 
 export const STRINGS = {
   'zh-TW': {
@@ -107,9 +107,128 @@ export const STRINGS = {
     submit: 'Send application', submitting: 'Sending…', uploading: (i, n) => `Uploading screenshot ${i}/${n}…`,
     ok: 'Application sent. The leadership will contact you after review.', err: 'Not sent: ', badPower: 'Power not recognized. Write it like 150M or 1.2B',
     tooMany: n => `At most ${n} screenshots. Remove some and send again`, notConfigured: 'Applications are not open yet.', required: 'This field is required'
+  },
+  ko: {
+    homeTitle: n => `${n} 서버 이주 신청`,
+    tagline: '이주민 모집 중',
+    lead: n => `${n} 서버로 이주하고 싶으신가요? 신청서를 보내 주시면 운영진이 검토 후 연락드립니다.`,
+    applyCta: '이주 신청하기',
+    statusCta: '신청 상태 확인',
+    statusTitle: '신청 상태 확인', statusIntro: '신청할 때 입력한 게임 닉네임과 게임 ID를 입력하면 심사 진행 상황을 볼 수 있습니다.',
+    statusCheck: '조회', statusChecking: '조회 중…', statusNeedBoth: '게임 닉네임과 게임 ID를 모두 입력하세요',
+    statusFailed: '조회 실패: ', statusNone: '신청서를 찾을 수 없습니다. 닉네임과 ID가 신청할 때와 같은지 확인하세요.',
+    statusMany: n => `신청서 ${n}건을 찾았습니다. 최신순입니다.`,
+    statusLabel: { pending: '심사 중', approved: '승인됨', rejected: '승인되지 않음' },
+    statusExplain: {
+      pending: '운영진이 아직 신청서를 검토하고 있습니다. 결과가 나오면 연락드립니다.',
+      approved: '신청이 승인되었습니다. 운영진이 다음 절차에 대해 연락드립니다.',
+      rejected: '이번 신청은 승인되지 않았습니다. 궁금한 점은 추천인이나 연맹 운영진에게 문의하세요.'
+    },
+    statusClan: '1지망 연맹', statusSubmitted: '제출일', statusReviewed: '심사일',
+    okStatus: '나중에 「신청 상태 확인」 페이지에서 진행 상황을 볼 수 있습니다.',
+    routeTitle: '신청 절차',
+    steps: [
+      ['신청서 작성', '게임 닉네임, ID, 전투력과 가방 스크린샷'],
+      ['연맹 심사', '선택한 연맹과 서버 운영진이 신청서를 검토합니다'],
+      ['결과 확인', '언제든 닉네임과 ID로 「신청 상태 확인」에서 진행 상황을 볼 수 있습니다. 승인되면 이주 일정을 연락드립니다']
+    ],
+    alliancesTitle: n => `${n} 서버의 연맹`,
+    footer: n => `Dark War: Survival ${n} 서버`,
+    finalTitle: '이주할 준비가 되셨나요?',
+    finalText: '전투력 수치와 가방 스크린샷을 준비한 뒤 작성을 시작하세요.',
+    credit: '사진: Serhii Kalyn, Nico (Unsplash)',
+    back: '홈으로',
+    title: '이주 신청',
+    intro: '* 표시 항목은 필수입니다. 제출하면 운영진이 신청서를 검토합니다.',
+    groupYou: '내 정보', groupClan: '가입 희망 연맹', groupPower: '전투력', groupPlay: '활동', groupMore: '스크린샷과 지원 이유',
+    usernameNote: '이주 이벤트가 끝날 때까지 닉네임을 바꾸지 마세요', anyClan: '상관없음',
+    idHelp: '게임 ID는 어디서 보나요?', idHelpText: '게임에서 프로필을 열면 「ID:」 옆의 숫자가 게임 ID입니다.', idHelpAlt: '게임 프로필 화면, ID 줄이 주황색 테두리로 표시됨',
+    mainFaction: '주력 병종', killCount: '처치 수', killHint: '예: 2.2M',
+    activeHours: '주 접속 시간', activeHoursHint: '서버 시간(ST) 기준, 예: 20:00–24:00',
+    participation: '서버/연맹 이벤트 참여도', leadership: '연맹 운영 경험',
+    participationOptions: { very: '매우 활발: 거의 모든 이벤트 참여', active: '활발: 주요 이벤트 대부분 참여', moderate: '보통: 시간 될 때 참여', occasional: '가끔: 일부 이벤트만 참여', rare: '거의 참여 안 함' },
+    leadershipOptions: { r5: 'R5', r4: 'R4', none: '없음' },
+    agreeRules: n => `${n} 서버 규칙, NAP(불가침 협정), 연맹 규정을 지키겠습니다`, mustAgree: '동의에 체크해야 제출할 수 있습니다',
+    username: '게임 닉네임', gameId: '게임 ID', currentState: '현재 서버', currentClan: '현재 연맹',
+    preferredClan: '1지망', backupClan: '2지망',
+    referrer: `${CONFIG.stateName} 서버 추천인`, referrerHint: '선택 사항, 추천해 준 플레이어의 닉네임', select: '선택', none: '선택 안 함',
+    watchtower: '감시탑 레벨', industrial: n => `Industrial ${n}`, overallPower: '총 전투력', march1: '1부대(주력 차량) 전투력', march2: '2부대 전투력', march3: '3부대 전투력',
+    powerHint: '예: 150M, 1.2B, 1.5억', reason: '가입하려는 이유',
+    images: '가방/영웅 스크린샷', imagesHint: n => `최대 ${n}장, 제출할 때 자동으로 압축됩니다`,
+    chooseFiles: '스크린샷 선택', noFiles: '선택한 스크린샷 없음', filesChosen: n => `${n}장 선택됨`,
+    submit: '신청서 제출', submitting: '제출 중…', uploading: (i, n) => `스크린샷 업로드 중 ${i}/${n}…`,
+    ok: '신청서가 제출되었습니다. 운영진이 검토 후 연락드립니다.', err: '제출되지 않았습니다: ', badPower: '전투력을 인식할 수 없습니다. 150M, 1.2B, 1.5억처럼 입력하세요',
+    tooMany: n => `스크린샷은 최대 ${n}장입니다. 일부를 지우고 다시 제출하세요`, notConfigured: '아직 신청을 받지 않습니다.', required: '필수 항목입니다'
+  },
+  ar: {
+    homeTitle: n => `طلب الانتقال إلى الولاية ${n}`,
+    tagline: 'نستقبل المنتقلين الآن',
+    lead: n => `تفكر في الانتقال إلى الولاية ${n}؟ أرسل طلبًا وستتواصل معك القيادة بعد مراجعته.`,
+    applyCta: 'قدّم طلب الانتقال',
+    statusCta: 'تحقق من حالة الطلب',
+    statusTitle: 'حالة الطلب', statusIntro: 'أدخل اسمك ومعرّفك في اللعبة كما كتبتهما في الطلب لترى أين وصل.',
+    statusCheck: 'تحقق', statusChecking: 'جارٍ التحقق…', statusNeedBoth: 'أدخل اسمك ومعرّفك في اللعبة معًا',
+    statusFailed: 'تعذّر التحقق: ', statusNone: 'لم يُعثر على طلب. تأكد من أن الاسم والمعرّف مطابقان لما أدخلته عند التقديم.',
+    statusMany: n => `وُجد ${n} طلبات، الأحدث أولًا.`,
+    statusLabel: { pending: 'قيد المراجعة', approved: 'مقبول', rejected: 'غير مقبول' },
+    statusExplain: {
+      pending: 'ما زالت القيادة تراجع طلبك، وستتواصل معك عند صدور القرار.',
+      approved: 'تم قبول طلبك. ستتواصل معك القيادة بشأن الخطوات التالية.',
+      rejected: 'لم يُقبل طلبك هذه المرة. إن كان لديك سؤال فاسأل من رشّحك أو قيادة التحالف.'
+    },
+    statusClan: 'الخيار الأول', statusSubmitted: 'تاريخ التقديم', statusReviewed: 'تاريخ المراجعة',
+    okStatus: 'يمكنك متابعة طلبك لاحقًا من صفحة حالة الطلب.',
+    routeTitle: 'خطوات التقديم',
+    steps: [
+      ['املأ الطلب', 'اسمك ومعرّفك في اللعبة وقوتك، مع لقطات شاشة للحقيبة'],
+      ['مراجعة التحالف', 'يراجع التحالف الذي اخترته وقيادة الولاية طلبك'],
+      ['اعرف النتيجة', 'تابع طلبك في أي وقت من صفحة حالة الطلب باسمك ومعرّفك. إذا قُبلت فسيتواصل معك أحد لترتيب الانتقال']
+    ],
+    alliancesTitle: n => `تحالفات الولاية ${n}`,
+    footer: n => `Dark War: Survival، الولاية ${n}`,
+    finalTitle: 'مستعد للانتقال؟',
+    finalText: 'جهّز أرقام قوتك ولقطات شاشة الحقيبة، ثم ابدأ بملء الطلب.',
+    credit: 'الصور: Serhii Kalyn وNico (Unsplash)',
+    back: 'العودة إلى الرئيسية',
+    title: 'طلب الانتقال',
+    intro: 'الحقول المعلّمة بـ * إلزامية. يذهب طلبك إلى القيادة للمراجعة.',
+    groupYou: 'معلوماتك', groupClan: 'التحالف الذي تريد الانضمام إليه', groupPower: 'القوة', groupPlay: 'النشاط', groupMore: 'لقطات الشاشة والسبب',
+    usernameNote: 'لا تغيّر اسمك حتى ينتهي حدث الانتقال', anyClan: 'بلا تفضيل',
+    idHelp: 'أين أجد معرّفي في اللعبة؟', idHelpText: 'افتح ملفك الشخصي في اللعبة، والأرقام بجانب «ID:» هي معرّفك.', idHelpAlt: 'شاشة الملف الشخصي في اللعبة، وسطر المعرّف محاط بإطار برتقالي',
+    mainFaction: 'فئة القوات الرئيسية', killCount: 'عدد القتلى', killHint: 'مثال: 2.2M',
+    activeHours: 'أوقات نشاطك المعتادة', activeHoursHint: 'بتوقيت الخادم (ST)، مثال: 20:00–24:00',
+    participation: 'المشاركة في فعاليات الخادم والتحالف', leadership: 'خبرة في قيادة تحالف',
+    participationOptions: { very: 'نشط جدًا: تقريبًا كل الفعاليات', active: 'نشط: معظم الفعاليات الكبرى', moderate: 'متوسط: عندما يتاح الوقت', occasional: 'أحيانًا: بعض الفعاليات فقط', rare: 'نادرًا ما أشارك' },
+    leadershipOptions: { r5: 'R5', r4: 'R4', none: 'لا' },
+    agreeRules: n => `ألتزم بقواعد الولاية ${n} واتفاقية عدم الاعتداء (NAP) وقوانين التحالف`, mustAgree: 'ضع علامة الموافقة قبل الإرسال',
+    username: 'الاسم في اللعبة', gameId: 'المعرّف في اللعبة', currentState: 'الولاية الحالية', currentClan: 'التحالف الحالي',
+    preferredClan: 'الخيار الأول', backupClan: 'الخيار الثاني',
+    referrer: `من رشّحك في الولاية ${CONFIG.stateName}`, referrerHint: 'اختياري، اسم اللاعب الذي رشّحك في اللعبة', select: 'اختر', none: 'لا شيء',
+    watchtower: 'مستوى برج المراقبة', industrial: n => `Industrial ${n}`, overallPower: 'القوة الإجمالية', march1: 'قوة المسيرة الأولى (المركبة الرئيسية)', march2: 'قوة المسيرة الثانية', march3: 'قوة المسيرة الثالثة',
+    powerHint: 'مثال: 150M أو 1.2B', reason: 'لماذا تريد الانضمام؟',
+    images: 'لقطات شاشة الحقيبة / الأبطال', imagesHint: n => `حتى ${n} صور، تُضغط تلقائيًا عند الإرسال`,
+    chooseFiles: 'اختر لقطات الشاشة', noFiles: 'لم تُختر أي لقطة', filesChosen: n => `تم اختيار ${n}`,
+    submit: 'أرسل الطلب', submitting: 'جارٍ الإرسال…', uploading: (i, n) => `جارٍ رفع اللقطة ${i}/${n}…`,
+    ok: 'تم إرسال الطلب. ستتواصل معك القيادة بعد المراجعة.', err: 'لم يُرسل: ', badPower: 'لم نفهم قيمة القوة. اكتبها مثل 150M أو 1.2B',
+    tooMany: n => `الحد الأقصى ${n} لقطات. احذف بعضها وأرسل مرة أخرى`, notConfigured: 'التقديم غير مفتوح بعد.', required: 'هذا الحقل مطلوب'
   }
 }
 
+// 語言清單：選單顯示名、<html lang>、日期格式、文字方向。阿拉伯文日期用拉丁數字，和遊戲內一致。
+export const LANGS = {
+  'zh-TW': { label: '繁體中文', html: 'zh-Hant', locale: 'zh-TW', dir: 'ltr' },
+  en: { label: 'English', html: 'en', locale: 'en-GB', dir: 'ltr' },
+  ko: { label: '한국어', html: 'ko', locale: 'ko-KR', dir: 'ltr' },
+  ar: { label: 'العربية', html: 'ar', locale: 'ar-u-nu-latn', dir: 'rtl' }
+}
+
+// 設定整頁語言與方向
+export function setDocumentLanguage(lang) {
+  document.documentElement.lang = LANGS[lang].html
+  document.documentElement.dir = LANGS[lang].dir
+}
+
+// 預設規則（用戶指定不變）：瀏覽器中文 → 繁中，其他 → 英文；韓文、阿拉伯文只能手動選
 export function pickLanguage() {
   try {
     const saved = localStorage.getItem('apply-lang')

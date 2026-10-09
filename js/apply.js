@@ -1,8 +1,8 @@
-import { CONFIG, TABLE, BUCKET, isConfigured } from '../config.js?v=20261009101303'
-import { STRINGS, pickLanguage, saveLanguage } from './i18n.js?v=20261009101303'
-import { parsePower, formatPower } from './power.js?v=20261009101303'
-import { compressImage } from './image.js?v=20261009101303'
-import { supabase } from './client.js?v=20261009101303'
+import { CONFIG, TABLE, BUCKET, isConfigured } from '../config.js?v=20261010021826'
+import { STRINGS, pickLanguage, saveLanguage, setDocumentLanguage } from './i18n.js?v=20261010021826'
+import { parsePower, formatPower } from './power.js?v=20261010021826'
+import { compressImage } from './image.js?v=20261010021826'
+import { supabase } from './client.js?v=20261010021826'
 
 const $ = id => document.getElementById(id)
 let lang = pickLanguage()
@@ -44,7 +44,7 @@ function render() {
   const s = t()
   // 保留使用者已填的值，切換語言不清空
   const values = Object.fromEntries(new FormData($('form')))
-  document.documentElement.lang = lang === 'en' ? 'en' : 'zh-Hant'
+  setDocumentLanguage(lang)
   document.title = s.title
   $('lang').value = lang
   $('stateNo').textContent = CONFIG.stateName

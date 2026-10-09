@@ -1,6 +1,6 @@
-import { CONFIG, isConfigured } from '../config.js?v=20261009101303'
-import { STRINGS, pickLanguage, saveLanguage } from './i18n.js?v=20261009101303'
-import { supabase } from './client.js?v=20261009101303'
+import { CONFIG, isConfigured } from '../config.js?v=20261010021826'
+import { STRINGS, pickLanguage, saveLanguage, LANGS, setDocumentLanguage } from './i18n.js?v=20261010021826'
+import { supabase } from './client.js?v=20261010021826'
 
 const $ = id => document.getElementById(id)
 const el = (tag, props = {}, ...children) => {
@@ -13,7 +13,7 @@ const t = () => STRINGS[lang]
 // 最近一次查詢結果；切換語言時用它重畫，不必重查
 let rows = null
 
-const fmtDate = iso => new Date(iso).toLocaleDateString(lang === 'en' ? 'en-GB' : 'zh-TW', { year: 'numeric', month: 'short', day: 'numeric' })
+const fmtDate = iso => new Date(iso).toLocaleDateString(LANGS[lang].locale, { year: 'numeric', month: 'short', day: 'numeric' })
 
 function setMsg(text, kind = '') {
   $('msg').textContent = text
@@ -37,7 +37,7 @@ function renderResults() {
 
 function render() {
   const s = t()
-  document.documentElement.lang = lang === 'en' ? 'en' : 'zh-Hant'
+  setDocumentLanguage(lang)
   document.title = s.statusTitle
   $('lang').value = lang
   $('stateNo').textContent = CONFIG.stateName

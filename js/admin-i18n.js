@@ -65,5 +65,71 @@ export const ADMIN_STRINGS = {
       march1: '1st march power', march2: '2nd march power', march3: '3rd march power', kills: 'Kill count', faction: 'Main faction', hours: 'Active hours (ST)',
       events: 'Event participation', leadership: 'Leadership experience', agree: 'Agreed to rules', reason: 'Reason', images: 'Screenshots', note: 'Note', language: 'Language'
     }
+  },
+  ko: {
+    title: '신청 심사', titleClan: c => `${c} 신청 심사`,
+    email: 'Email', account: '계정', accountHint: '연맹 약칭(예: AxY) 또는 Email', password: '비밀번호', login: '로그인', loggingIn: '로그인 중…', loginFailed: m => `로그인 실패: ${m}`,
+    notConfigured: 'config.js에 Supabase 설정이 없습니다.',
+    notStaff: e => `이 계정(${e})은 심사자 명단에 없습니다.`,
+    staffCheckFailed: m => `로그인은 됐지만 심사자 명단을 읽지 못했습니다: ${m}`,
+    whoAlliance: (c, e) => `${c} 연맹 계정(${e})`, who: (e, r) => `${e}(${r})`,
+    allStatus: '모든 상태', allClans: '모든 연맹',
+    sortPower: '총 전투력(높은 순)', sortNew: '최신 제출순', sortOld: '오래된 제출순',
+    search: '닉네임 / ID / 추천인 검색', reload: '새로고침', export: 'CSV 내보내기', logout: '로그아웃', close: '닫기',
+    loading: '불러오는 중…', loadFailed: m => `불러오기 실패: ${m}`, count: (n, total) => `${total}건 중 ${n}건 표시`,
+    status: { pending: '대기', approved: '승인', rejected: '거절' },
+    faction: { fighter: 'Fighter', shooter: 'Shooter', rider: 'Rider', none: '고정 병종 없음', unknown: '모름' },
+    participation: { very: '매우 활발', active: '활발', moderate: '보통', occasional: '가끔', rare: '거의 안 함' },
+    leadership: { r5: '전 R5', r4: '전 R4', none: '운영 경험 없음' },
+    any: '상관없음', industrial: n => `Industrial ${n}`,
+    meta: {
+      state: v => `서버 ${v}`, currentClan: v => `현재 연맹 ${v}`, preferred: v => `1지망 ${v}`, backup: v => `2지망 ${v}`,
+      referrer: v => `추천인 ${v}`, watchtower: v => `감시탑 ${v}`, faction: v => `병종 ${v}`,
+      hours: v => `접속 ${v}`, events: v => `이벤트 ${v}`, noAgree: '규칙에 동의하지 않음'
+    },
+    march1: '1부대', march2: '2부대', march3: '3부대', kills: '처치',
+    note: '메모(다른 심사 계정도 볼 수 있음)', save: '저장', reviewedAt: t => `심사 ${t}`,
+    readonlyAny: '신청자가 「상관없음」을 선택해 보기만 가능합니다', readonlySecond: c => `2지망입니다(1지망 ${c}). 보기만 가능합니다`,
+    saveFailed: m => `저장 실패: ${m}`, noPermission: '권한 없음', updated: (u, s) => `업데이트됨: ${u} → ${s}`,
+    thumbsFailed: m => `스크린샷을 불러오지 못했습니다: ${m}`, screenshot: '스크린샷', yes: '예', no: '아니요',
+    csv: {
+      created: '제출 시간', status: '상태', username: '게임 닉네임', gameId: '게임 ID', state: '현재 서버', currentClan: '현재 연맹',
+      preferred: '1지망 연맹', backup: '2지망 연맹', referrer: '추천인', watchtower: '감시탑', power: '총 전투력', powerShown: '총 전투력(표시)',
+      march1: '1부대 전투력', march2: '2부대 전투력', march3: '3부대 전투력', kills: '처치 수', faction: '주력 병종', hours: '접속 시간(ST)',
+      events: '이벤트 참여도', leadership: '운영 경험', agree: '규칙 동의', reason: '지원 이유', images: '스크린샷 수', note: '메모', language: '언어'
+    }
+  },
+  ar: {
+    title: 'مراجعة الطلبات', titleClan: c => `مراجعة طلبات ${c}`,
+    email: 'Email', account: 'الحساب', accountHint: 'اختصار التحالف (مثل AxY) أو البريد', password: 'كلمة المرور', login: 'تسجيل الدخول', loggingIn: 'جارٍ تسجيل الدخول…', loginFailed: m => `فشل تسجيل الدخول: ${m}`,
+    notConfigured: 'إعدادات Supabase غير موجودة في config.js.',
+    notStaff: e => `هذا الحساب (${e}) ليس ضمن قائمة المراجعين.`,
+    staffCheckFailed: m => `تم تسجيل الدخول، لكن تعذّرت قراءة قائمة المراجعين: ${m}`,
+    whoAlliance: (c, e) => `حساب تحالف ${c} (${e})`, who: (e, r) => `${e} (${r})`,
+    allStatus: 'كل الحالات', allClans: 'كل التحالفات',
+    sortPower: 'القوة الإجمالية (من الأعلى)', sortNew: 'الأحدث أولًا', sortOld: 'الأقدم أولًا',
+    search: 'ابحث بالاسم / المعرّف / المرشِّح', reload: 'تحديث', export: 'تصدير CSV', logout: 'تسجيل الخروج', close: 'إغلاق',
+    loading: 'جارٍ التحميل…', loadFailed: m => `تعذّر التحميل: ${m}`, count: (n, total) => `عرض ${n} من ${total}`,
+    status: { pending: 'قيد المراجعة', approved: 'مقبول', rejected: 'مرفوض' },
+    faction: { fighter: 'Fighter', shooter: 'Shooter', rider: 'Rider', none: 'بلا فئة ثابتة', unknown: 'لا يعرف' },
+    participation: { very: 'نشط جدًا', active: 'نشط', moderate: 'متوسط', occasional: 'أحيانًا', rare: 'نادرًا' },
+    leadership: { r5: 'كان R5', r4: 'كان R4', none: 'بلا خبرة قيادية' },
+    any: 'بلا تفضيل', industrial: n => `Industrial ${n}`,
+    meta: {
+      state: v => `الولاية ${v}`, currentClan: v => `التحالف الحالي ${v}`, preferred: v => `الخيار الأول ${v}`, backup: v => `الخيار الثاني ${v}`,
+      referrer: v => `المرشِّح ${v}`, watchtower: v => `برج المراقبة ${v}`, faction: v => `الفئة ${v}`,
+      hours: v => `النشاط ${v}`, events: v => `الفعاليات: ${v}`, noAgree: 'لم يوافق على القواعد'
+    },
+    march1: 'الأولى', march2: 'الثانية', march3: 'الثالثة', kills: 'القتلى',
+    note: 'ملاحظة (يراها المراجعون الآخرون)', save: 'حفظ', reviewedAt: t => `رُوجع ${t}`,
+    readonlyAny: 'اختار المتقدم «بلا تفضيل». للعرض فقط', readonlySecond: c => `أنت الخيار الثاني (الأول ${c}). للعرض فقط`,
+    saveFailed: m => `تعذّر الحفظ: ${m}`, noPermission: 'لا صلاحية', updated: (u, s) => `تم التحديث: ${u} ← ${s}`,
+    thumbsFailed: m => `تعذّر تحميل لقطات الشاشة: ${m}`, screenshot: 'لقطة شاشة', yes: 'نعم', no: 'لا',
+    csv: {
+      created: 'وقت التقديم', status: 'الحالة', username: 'الاسم في اللعبة', gameId: 'المعرّف في اللعبة', state: 'الولاية الحالية', currentClan: 'التحالف الحالي',
+      preferred: 'الخيار الأول', backup: 'الخيار الثاني', referrer: 'المرشِّح', watchtower: 'برج المراقبة', power: 'القوة الإجمالية', powerShown: 'القوة الإجمالية (مختصرة)',
+      march1: 'قوة المسيرة الأولى', march2: 'قوة المسيرة الثانية', march3: 'قوة المسيرة الثالثة', kills: 'عدد القتلى', faction: 'الفئة الرئيسية', hours: 'أوقات النشاط (ST)',
+      events: 'المشاركة في الفعاليات', leadership: 'الخبرة القيادية', agree: 'الموافقة على القواعد', reason: 'السبب', images: 'عدد اللقطات', note: 'ملاحظة', language: 'اللغة'
+    }
   }
 }

@@ -1,10 +1,10 @@
-import { CONFIG, TABLE, BUCKET, isConfigured } from '../config.js?v=20261009101303'
-import { supabase } from './client.js?v=20261009101303'
-import { formatPower } from './power.js?v=20261009101303'
-import { toCsv } from './csv.js?v=20261009101303'
-import { pickLanguage, saveLanguage } from './i18n.js?v=20261009101303'
-import { ADMIN_STRINGS } from './admin-i18n.js?v=20261009101303'
-import { loginEmail } from './staff-login.js?v=20261009101303'
+import { CONFIG, TABLE, BUCKET, isConfigured } from '../config.js?v=20261010021826'
+import { supabase } from './client.js?v=20261010021826'
+import { formatPower } from './power.js?v=20261010021826'
+import { toCsv } from './csv.js?v=20261010021826'
+import { pickLanguage, saveLanguage, LANGS, setDocumentLanguage } from './i18n.js?v=20261010021826'
+import { ADMIN_STRINGS } from './admin-i18n.js?v=20261010021826'
+import { loginEmail } from './staff-login.js?v=20261010021826'
 
 const $ = id => document.getElementById(id)
 // 語言偏好與申請頁共用
@@ -27,7 +27,7 @@ function msg(text, kind = '') { $('msg').textContent = text; $('msg').className 
 function applyLanguage() {
   const s = t()
   const get = key => key.split('.').reduce((o, k) => o?.[k], s)
-  document.documentElement.lang = lang === 'en' ? 'en' : 'zh-Hant'
+  setDocumentLanguage(lang)
   $('lang').value = lang
   document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = get(el.dataset.i18n) })
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => { el.placeholder = get(el.dataset.i18nPlaceholder) })
@@ -117,7 +117,7 @@ function filtered() {
 }
 
 function fmtTime(iso) {
-  return new Date(iso).toLocaleString(lang === 'en' ? 'en-GB' : 'zh-TW', { hour12: false })
+  return new Date(iso).toLocaleString(LANGS[lang].locale, { hour12: false })
 }
 
 function render() {

@@ -1,5 +1,5 @@
-import { CONFIG } from '../config.js?v=20261009101303'
-import { STRINGS, pickLanguage, saveLanguage } from './i18n.js?v=20261009101303'
+import { CONFIG } from '../config.js?v=20261010021826'
+import { STRINGS, pickLanguage, saveLanguage, setDocumentLanguage } from './i18n.js?v=20261010021826'
 
 const $ = id => document.getElementById(id)
 const el = (tag, props = {}, ...children) => {
@@ -12,7 +12,7 @@ let lang = pickLanguage()
 function render() {
   const s = STRINGS[lang]
   const n = CONFIG.stateName
-  document.documentElement.lang = lang === 'en' ? 'en' : 'zh-Hant'
+  setDocumentLanguage(lang)
   document.title = s.homeTitle(n)
   $('lang').value = lang
   $('stateNo').textContent = n
