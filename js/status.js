@@ -1,6 +1,6 @@
-import { CONFIG, isConfigured } from '../config.js?v=20261010041619'
-import { STRINGS, pickLanguage, saveLanguage, LANGS, setDocumentLanguage } from './i18n.js?v=20261010041619'
-import { supabase } from './client.js?v=20261010041619'
+import { CONFIG, isConfigured } from '../config.js?v=20261010042700'
+import { STRINGS, pickLanguage, bindLangSwitch, LANGS, setDocumentLanguage } from './i18n.js?v=20261010042700'
+import { supabase } from './client.js?v=20261010042700'
 
 const $ = id => document.getElementById(id)
 const el = (tag, props = {}, ...children) => {
@@ -39,7 +39,6 @@ function render() {
   const s = t()
   setDocumentLanguage(lang)
   document.title = s.statusTitle
-  $('lang').value = lang
   $('stateNo').textContent = CONFIG.stateName
   $('back').textContent = s.back
   $('title').textContent = s.statusTitle
@@ -78,6 +77,6 @@ async function lookup(e) {
   }
 }
 
-$('lang').addEventListener('change', e => { lang = e.target.value; saveLanguage(lang); render() })
+bindLangSwitch(lang, l => { lang = l; render() })
 $('form').addEventListener('submit', lookup)
 render()

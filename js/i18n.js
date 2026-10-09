@@ -1,4 +1,4 @@
-import { CONFIG } from '../config.js?v=20261010041619'
+import { CONFIG } from '../config.js?v=20261010042700'
 
 export const STRINGS = {
   'zh-TW': {
@@ -254,6 +254,20 @@ export function langFromUrl(search) {
   if (!v) return null
   if (v === 'zh' || v === 'zh-tw' || v === 'tw') return 'zh-TW'
   return STRINGS[v] ? v : null
+}
+
+// 頁首的語言按鈕：標示目前語言，點了就存起來並通知頁面重畫
+export function bindLangSwitch(current, onPick) {
+  const nav = document.getElementById('lang')
+  const mark = lang => nav.querySelectorAll('button[data-lang]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)))
+  mark(current)
+  nav.addEventListener('click', e => {
+    const b = e.target.closest('button[data-lang]')
+    if (!b) return
+    saveLanguage(b.dataset.lang)
+    mark(b.dataset.lang)
+    onPick(b.dataset.lang)
+  })
 }
 
 export function saveLanguage(lang) {

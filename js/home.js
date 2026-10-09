@@ -1,5 +1,5 @@
-import { CONFIG } from '../config.js?v=20261010041619'
-import { STRINGS, pickLanguage, saveLanguage, setDocumentLanguage } from './i18n.js?v=20261010041619'
+import { CONFIG } from '../config.js?v=20261010042700'
+import { STRINGS, pickLanguage, bindLangSwitch, setDocumentLanguage } from './i18n.js?v=20261010042700'
 
 const $ = id => document.getElementById(id)
 const el = (tag, props = {}, ...children) => {
@@ -14,7 +14,6 @@ function render() {
   const n = CONFIG.stateName
   setDocumentLanguage(lang)
   document.title = s.homeTitle(n)
-  $('lang').value = lang
   $('stateNo').textContent = n
   $('tagline').textContent = s.tagline
   $('lead').textContent = s.lead(n)
@@ -36,5 +35,5 @@ function render() {
   $('credit').textContent = s.credit
 }
 
-$('lang').addEventListener('change', e => { lang = e.target.value; saveLanguage(lang); render() })
+bindLangSwitch(lang, l => { lang = l; render() })
 render()

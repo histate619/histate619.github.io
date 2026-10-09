@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Big+Shoulders+Stencil+Display:wght@900&family=Noto+Sans+TC:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" href="style.css?v=20261010041619">
+<link rel="stylesheet" href="style.css?v=20261010042700">
 </head>
 <body>
 <header class="hero">
@@ -20,12 +20,13 @@
   </picture>
   <div class="wrap">
     <div class="topbar">
-      <select id="lang" aria-label="Language">
-        <option value="zh-TW">繁體中文</option>
-        <option value="en">English</option>
-        <option value="ko">한국어</option>
-        <option value="ar">العربية</option>
-      </select>
+      <nav class="lang-switch" id="lang" aria-label="Language">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg>
+        <button type="button" data-lang="zh-TW" lang="zh-Hant">繁中</button>
+        <button type="button" data-lang="en" lang="en">English</button>
+        <button type="button" data-lang="ko" lang="ko">한국어</button>
+        <button type="button" data-lang="ar" lang="ar">العربية</button>
+      </nav>
     </div>
     <div class="hero-copy">
       <p class="game">Dark War: Survival</p>
@@ -64,6 +65,6 @@
   <span id="footer"></span>
   <span id="credit"></span>
 </footer>
-<script type="module" src="js/home.js?v=20261010041619"></script>
+<script type="module" src="js/home.js?v=20261010042700"></script>
 </body>
 </html>

@@ -27,7 +27,14 @@ img { max-width: 100%; }
 .topbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 18px 0; position: relative; z-index: 2; }
 .topbar a { color: var(--ash); text-decoration: none; font-weight: 700; font-size: 15px; }
 .topbar a:hover { color: var(--ember); }
-.topbar select { width: auto; margin-inline-start: auto; padding: 7px 10px; font-size: 14px; background: #0009; border-color: #ffffff30; backdrop-filter: blur(4px); }
+/* 語言按鈕：每種語言用自己的文字寫，玩家一眼看到母語 */
+.topbar { flex-wrap: wrap; row-gap: 10px; }
+.lang-switch { display: flex; align-items: center; gap: 2px; margin-inline-start: auto; padding: 3px; background: #0c0d0ebf; border: 1px solid #ffffff2e; backdrop-filter: blur(6px); }
+.lang-switch svg { width: 17px; height: 17px; flex: none; margin: 0 6px 0 7px; color: var(--ash); opacity: .75; }
+.lang-switch button { clip-path: none; background: transparent; color: #ece6dac7; font: 700 14px/1 var(--body); padding: 9px 11px; }
+.lang-switch button:hover { background: #ffffff17; color: var(--ash); }
+.lang-switch button[aria-pressed="true"] { background: var(--ember); color: #160800; }
+.lang-switch button:focus-visible { outline: 2px solid var(--ash); outline-offset: 1px; }
 
 /* ───── 首頁主視覺 ───── */
 .hero { position: relative; min-height: min(100svh, 920px); display: flex; flex-direction: column; overflow: hidden; isolation: isolate; }

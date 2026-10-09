@@ -1,8 +1,8 @@
-import { CONFIG, TABLE, BUCKET, isConfigured } from '../config.js?v=20261010041619'
-import { STRINGS, pickLanguage, saveLanguage, setDocumentLanguage } from './i18n.js?v=20261010041619'
-import { parsePower, formatPower } from './power.js?v=20261010041619'
-import { compressImage } from './image.js?v=20261010041619'
-import { supabase } from './client.js?v=20261010041619'
+import { CONFIG, TABLE, BUCKET, isConfigured } from '../config.js?v=20261010042700'
+import { STRINGS, pickLanguage, bindLangSwitch, setDocumentLanguage } from './i18n.js?v=20261010042700'
+import { parsePower, formatPower } from './power.js?v=20261010042700'
+import { compressImage } from './image.js?v=20261010042700'
+import { supabase } from './client.js?v=20261010042700'
 
 const $ = id => document.getElementById(id)
 let lang = pickLanguage()
@@ -44,7 +44,6 @@ function render() {
   const values = Object.fromEntries(new FormData($('form')))
   setDocumentLanguage(lang)
   document.title = s.title
-  $('lang').value = lang
   $('stateNo').textContent = CONFIG.stateName
   $('back').textContent = s.back
   $('title').textContent = s.title
@@ -268,7 +267,7 @@ async function submit(e) {
   }
 }
 
-$('lang').addEventListener('change', e => { lang = e.target.value; saveLanguage(lang); render() })
+bindLangSwitch(lang, l => { lang = l; render() })
 $('form').addEventListener('submit', submit)
 // 使用者修改任何欄位後，清掉上一次的錯誤提示
 $('form').addEventListener('input', () => { if ($('msg').classList.contains('err')) setMsg('') })
