@@ -1,9 +1,9 @@
-import { CONFIG, TABLE, BUCKET, isConfigured } from '../config.js?v=20261009083728'
-import { supabase } from './client.js?v=20261009083728'
-import { formatPower } from './power.js?v=20261009083728'
-import { toCsv } from './csv.js?v=20261009083728'
-import { pickLanguage, saveLanguage } from './i18n.js?v=20261009083728'
-import { ADMIN_STRINGS } from './admin-i18n.js?v=20261009083728'
+import { CONFIG, TABLE, BUCKET, isConfigured } from '../config.js?v=20261009085625'
+import { supabase } from './client.js?v=20261009085625'
+import { formatPower } from './power.js?v=20261009085625'
+import { toCsv } from './csv.js?v=20261009085625'
+import { pickLanguage, saveLanguage } from './i18n.js?v=20261009085625'
+import { ADMIN_STRINGS } from './admin-i18n.js?v=20261009085625'
 
 const $ = id => document.getElementById(id)
 // 語言偏好與申請頁共用
@@ -64,7 +64,8 @@ $('login').addEventListener('submit', async e => {
 async function enter(user) {
   const { data, error } = await supabase.from('admins').select('role, clan').eq('user_id', user.id).maybeSingle()
   if (error || !data) {
-    msg(t().notStaff(user.email), 'err')
+    // 讀名單出錯與真的不在名單要分開顯示，否則無法判斷是設定問題還是權限問題
+    msg(error ? t().staffCheckFailed(error.message) : t().notStaff(user.email), 'err')
     await supabase.auth.signOut()
     showLogin()
     return
