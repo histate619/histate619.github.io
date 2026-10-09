@@ -1,8 +1,8 @@
-import { CONFIG, TABLE, BUCKET, isConfigured } from '../config.js?v=20261010041318'
-import { STRINGS, pickLanguage, saveLanguage, setDocumentLanguage } from './i18n.js?v=20261010041318'
-import { parsePower, formatPower } from './power.js?v=20261010041318'
-import { compressImage } from './image.js?v=20261010041318'
-import { supabase } from './client.js?v=20261010041318'
+import { CONFIG, TABLE, BUCKET, isConfigured } from '../config.js?v=20261010041619'
+import { STRINGS, pickLanguage, saveLanguage, setDocumentLanguage } from './i18n.js?v=20261010041619'
+import { parsePower, formatPower } from './power.js?v=20261010041619'
+import { compressImage } from './image.js?v=20261010041619'
+import { supabase } from './client.js?v=20261010041619'
 
 const $ = id => document.getElementById(id)
 let lang = pickLanguage()

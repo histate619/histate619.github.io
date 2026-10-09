@@ -12,7 +12,7 @@ export const ADMIN_STRINGS = {
     search: '搜尋名稱 / ID / 推薦人', reload: '重新整理', export: '匯出 CSV', logout: '登出', close: '關閉',
     loading: '載入中…', loadFailed: m => `讀取失敗：${m}`, count: (n, total) => `顯示 ${n} / 共 ${total} 筆`,
     status: { pending: '待審', approved: '通過', rejected: '拒絕' },
-    faction: { fighter: 'Fighter', shooter: 'Shooter', rider: 'Rider', none: '無固定兵種', unknown: '不清楚' },
+    faction: { fighter: '勇士', shooter: '射手', rider: '騎兵', none: '無固定兵種', unknown: '不清楚' },
     participation: { very: '非常活躍', active: '活躍', moderate: '普通', occasional: '偶爾', rare: '很少' },
     leadership: { r5: '曾任 R5', r4: '曾任 R4', none: '沒當過管理' },
     any: '不限', industrial: n => `工業 ${n}`,

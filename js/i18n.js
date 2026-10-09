@@ -1,4 +1,4 @@
-import { CONFIG } from '../config.js?v=20261010041318'
+import { CONFIG } from '../config.js?v=20261010041619'
 
 export const STRINGS = {
   'zh-TW': {
@@ -40,8 +40,8 @@ export const STRINGS = {
     usernameNote: '移民活動結束前請不要改名', anyClan: '不限',
     idHelp: '找不到遊戲 ID？看這裡', idHelpText: '在遊戲裡打開個人資料，「ID:」後面那一串數字就是。', idHelpAlt: '遊戲個人資料頁，ID 那一行用橘框標出',
     mainFaction: '主力兵種', killCount: '擊殺數', killHint: '例：2.2M',
-    // 兵種名稱照遊戲內該語言的寫法；遊戲繁中、韓文版的官方譯名未查證，先用英文
-    factionOptions: { fighter: 'Fighter', shooter: 'Shooter', rider: 'Rider' },
+    // 遊戲繁中介面的兵種名稱（用戶 2026-10-10 提供）
+    factionOptions: { fighter: '勇士', shooter: '射手', rider: '騎兵' },
     activeHours: '平常上線時段', activeHoursHint: '用伺服器時間（ST），例：20:00–24:00',
     participation: '伺服器／聯盟活動參與度', leadership: '曾擔任聯盟管理',
     participationOptions: { very: '非常活躍：幾乎每個活動都參加', active: '活躍：主要活動大多參加', moderate: '普通：有空就參加', occasional: '偶爾：只參加部分活動', rare: '很少參加' },
@@ -94,7 +94,7 @@ export const STRINGS = {
     usernameNote: 'Please do not change your name until the migration event ends', anyClan: 'No preference',
     idHelp: 'Where is my game ID?', idHelpText: 'Open your profile in Dark War and look beside “ID:”.', idHelpAlt: 'Dark War profile screen with the ID row outlined in orange',
     mainFaction: 'Main troop faction', killCount: 'Kill count', killHint: 'e.g. 2.2M',
-    // 兵種名稱照遊戲內該語言的寫法；遊戲繁中、韓文版的官方譯名未查證，先用英文
+    // 兵種名稱照遊戲內英文版
     factionOptions: { fighter: 'Fighter', shooter: 'Shooter', rider: 'Rider' },
     activeHours: 'Usual active hours', activeHoursHint: 'In server time (ST), e.g. 20:00–24:00',
     participation: 'Server / alliance event participation', leadership: 'Alliance leadership experience',
@@ -148,7 +148,7 @@ export const STRINGS = {
     usernameNote: '이주 이벤트가 끝날 때까지 닉네임을 바꾸지 마세요', anyClan: '상관없음',
     idHelp: '게임 ID는 어디서 보나요?', idHelpText: '게임에서 프로필을 열면 「ID:」 옆의 숫자가 게임 ID입니다.', idHelpAlt: '게임 프로필 화면, ID 줄이 주황색 테두리로 표시됨',
     mainFaction: '주력 병종', killCount: '처치 수', killHint: '예: 2.2M',
-    // 兵種名稱照遊戲內該語言的寫法；遊戲繁中、韓文版的官方譯名未查證，先用英文
+    // 兵種名稱照遊戲內該語言的寫法；韓文版官方譯名未查證，先用英文
     factionOptions: { fighter: 'Fighter', shooter: 'Shooter', rider: 'Rider' },
     activeHours: '주 접속 시간', activeHoursHint: '서버 시간(ST) 기준, 예: 20:00–24:00',
     participation: '서버/연맹 이벤트 참여도', leadership: '연맹 운영 경험',
