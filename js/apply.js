@@ -1,8 +1,8 @@
-import { CONFIG, TABLE, BUCKET, isConfigured } from '../config.js?v=20261010035936'
-import { STRINGS, pickLanguage, saveLanguage, setDocumentLanguage } from './i18n.js?v=20261010035936'
-import { parsePower, formatPower } from './power.js?v=20261010035936'
-import { compressImage } from './image.js?v=20261010035936'
-import { supabase } from './client.js?v=20261010035936'
+import { CONFIG, TABLE, BUCKET, isConfigured } from '../config.js?v=20261010041318'
+import { STRINGS, pickLanguage, saveLanguage, setDocumentLanguage } from './i18n.js?v=20261010041318'
+import { parsePower, formatPower } from './power.js?v=20261010041318'
+import { compressImage } from './image.js?v=20261010041318'
+import { supabase } from './client.js?v=20261010041318'
 
 const $ = id => document.getElementById(id)
 let lang = pickLanguage()
@@ -10,8 +10,6 @@ const t = () => STRINGS[lang]
 
 // 欄位定義：name 對應資料庫欄位，group 決定分在哪個區塊
 const GROUPS = ['groupYou', 'groupClan', 'groupPower', 'groupPlay', 'groupMore']
-// 兵種名稱用遊戲內英文，不自行翻譯
-const FACTIONS = { fighter: 'Fighter', shooter: 'Shooter', rider: 'Rider' }
 const FIELDS = [
   { group: 'groupYou', name: 'username', label: 'username', type: 'text', required: true, max: 40, note: 'usernameNote' },
   { group: 'groupYou', name: 'game_id', label: 'gameId', type: 'text', required: true, max: 30, inputmode: 'numeric', help: true },
@@ -27,7 +25,7 @@ const FIELDS = [
   { group: 'groupPower', name: 'third_march_power', label: 'march3', type: 'power' },
   { group: 'groupPower', name: 'kill_count', label: 'killCount', type: 'power', required: true, hint: 'killHint' },
   { group: 'groupPower', name: 'main_faction', label: 'mainFaction', type: 'choice', required: true,
-    options: () => FACTIONS },
+    options: s => s.factionOptions },
   { group: 'groupPlay', name: 'active_hours', label: 'activeHours', type: 'text', required: true, max: 60, hint: 'activeHoursHint' },
   { group: 'groupPlay', name: 'leadership', label: 'leadership', type: 'choice', required: true, options: s => s.leadershipOptions },
   { group: 'groupPlay', name: 'participation', label: 'participation', type: 'choice', required: true, full: true,

@@ -1,4 +1,4 @@
-import { CONFIG } from '../config.js?v=20261010035936'
+import { CONFIG } from '../config.js?v=20261010041318'
 
 export const STRINGS = {
   'zh-TW': {
@@ -40,6 +40,8 @@ export const STRINGS = {
     usernameNote: '移民活動結束前請不要改名', anyClan: '不限',
     idHelp: '找不到遊戲 ID？看這裡', idHelpText: '在遊戲裡打開個人資料，「ID:」後面那一串數字就是。', idHelpAlt: '遊戲個人資料頁，ID 那一行用橘框標出',
     mainFaction: '主力兵種', killCount: '擊殺數', killHint: '例：2.2M',
+    // 兵種名稱照遊戲內該語言的寫法；遊戲繁中、韓文版的官方譯名未查證，先用英文
+    factionOptions: { fighter: 'Fighter', shooter: 'Shooter', rider: 'Rider' },
     activeHours: '平常上線時段', activeHoursHint: '用伺服器時間（ST），例：20:00–24:00',
     participation: '伺服器／聯盟活動參與度', leadership: '曾擔任聯盟管理',
     participationOptions: { very: '非常活躍：幾乎每個活動都參加', active: '活躍：主要活動大多參加', moderate: '普通：有空就參加', occasional: '偶爾：只參加部分活動', rare: '很少參加' },
@@ -92,6 +94,8 @@ export const STRINGS = {
     usernameNote: 'Please do not change your name until the migration event ends', anyClan: 'No preference',
     idHelp: 'Where is my game ID?', idHelpText: 'Open your profile in Dark War and look beside “ID:”.', idHelpAlt: 'Dark War profile screen with the ID row outlined in orange',
     mainFaction: 'Main troop faction', killCount: 'Kill count', killHint: 'e.g. 2.2M',
+    // 兵種名稱照遊戲內該語言的寫法；遊戲繁中、韓文版的官方譯名未查證，先用英文
+    factionOptions: { fighter: 'Fighter', shooter: 'Shooter', rider: 'Rider' },
     activeHours: 'Usual active hours', activeHoursHint: 'In server time (ST), e.g. 20:00–24:00',
     participation: 'Server / alliance event participation', leadership: 'Alliance leadership experience',
     participationOptions: { very: 'Very active: almost all events', active: 'Active: most major events', moderate: 'Moderate: when available', occasional: 'Occasional: selected events only', rare: 'Rarely take part' },
@@ -144,6 +148,8 @@ export const STRINGS = {
     usernameNote: '이주 이벤트가 끝날 때까지 닉네임을 바꾸지 마세요', anyClan: '상관없음',
     idHelp: '게임 ID는 어디서 보나요?', idHelpText: '게임에서 프로필을 열면 「ID:」 옆의 숫자가 게임 ID입니다.', idHelpAlt: '게임 프로필 화면, ID 줄이 주황색 테두리로 표시됨',
     mainFaction: '주력 병종', killCount: '처치 수', killHint: '예: 2.2M',
+    // 兵種名稱照遊戲內該語言的寫法；遊戲繁中、韓文版的官方譯名未查證，先用英文
+    factionOptions: { fighter: 'Fighter', shooter: 'Shooter', rider: 'Rider' },
     activeHours: '주 접속 시간', activeHoursHint: '서버 시간(ST) 기준, 예: 20:00–24:00',
     participation: '서버/연맹 이벤트 참여도', leadership: '연맹 운영 경험',
     participationOptions: { very: '매우 활발: 거의 모든 이벤트 참여', active: '활발: 주요 이벤트 대부분 참여', moderate: '보통: 시간 될 때 참여', occasional: '가끔: 일부 이벤트만 참여', rare: '거의 참여 안 함' },
@@ -196,6 +202,8 @@ export const STRINGS = {
     usernameNote: 'يُرجى عدم تغيير اسمك حتى ينتهي حدث الانتقال', anyClan: 'بلا تفضيل',
     idHelp: 'أين أجد معرّفي في اللعبة (ID)؟', idHelpText: 'افتح ملفك الشخصي في اللعبة، والأرقام بجانب «ID:» هي معرّفك.', idHelpAlt: 'شاشة الملف الشخصي في اللعبة، وسطر المعرّف محاط بإطار برتقالي',
     mainFaction: 'فئة القوات الرئيسية', killCount: 'عدد الأعداء المقتولين', killHint: 'مثال: 2.2M',
+    // 遊戲阿拉伯文介面的兵種名稱（用戶 2026-10-10 提供遊戲截圖確認）
+    factionOptions: { fighter: 'محاربين', shooter: 'رماة', rider: 'فرسان' },
     activeHours: 'أوقات نشاطك المعتادة', activeHoursHint: 'بتوقيت الخادم (ST)، مثال: 20:00–24:00',
     participation: 'المشاركة في فعاليات الخادم والتحالف', leadership: 'خبرة في قيادة تحالف',
     participationOptions: { very: 'نشط جدًا: تقريبًا كل الفعاليات', active: 'نشط: معظم الفعاليات الكبرى', moderate: 'متوسط: عندما يتاح الوقت', occasional: 'أحيانًا: بعض الفعاليات فقط', rare: 'نادرًا ما أشارك' },

@@ -111,7 +111,7 @@ export const ADMIN_STRINGS = {
     search: 'ابحث بالاسم / المعرّف (ID) / الداعي', reload: 'تحديث', export: 'تصدير CSV', logout: 'تسجيل الخروج', close: 'إغلاق',
     loading: 'جارٍ التحميل…', loadFailed: m => `تعذّر التحميل: ${m}`, count: (n, total) => `عرض ${n} من ${total}`,
     status: { pending: 'قيد المراجعة', approved: 'مقبول', rejected: 'مرفوض' },
-    faction: { fighter: 'Fighter', shooter: 'Shooter', rider: 'Rider', none: 'بلا فئة ثابتة', unknown: 'لا يعرف' },
+    faction: { fighter: 'محاربين', shooter: 'رماة', rider: 'فرسان', none: 'بلا فئة ثابتة', unknown: 'لا يعرف' },
     participation: { very: 'نشط جدًا', active: 'نشط', moderate: 'متوسط', occasional: 'أحيانًا', rare: 'نادرًا' },
     leadership: { r5: 'كان R5', r4: 'كان R4', none: 'بلا خبرة قيادية' },
     any: 'بلا تفضيل', industrial: n => `Industrial ${n}`,
