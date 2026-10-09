@@ -1,4 +1,4 @@
-import { CONFIG } from '../config.js?v=20261009090020'
+import { CONFIG } from '../config.js?v=20261009090817'
 
 export const STRINGS = {
   'zh-TW': {
@@ -7,6 +7,20 @@ export const STRINGS = {
     tagline: '正在招募移民',
     lead: n => `想搬到 ${n} 州？填一份申請，管理層看過後會跟你聯繫。`,
     applyCta: '填寫移民申請',
+    statusCta: '查看申請狀態',
+    // 申請狀態查詢頁
+    statusTitle: '申請狀態查詢', statusIntro: '輸入申請時填的遊戲名稱和遊戲 ID，就能看到審核進度。',
+    statusCheck: '查詢', statusChecking: '查詢中…', statusNeedBoth: '遊戲名稱和遊戲 ID 都要填',
+    statusFailed: '查詢失敗：', statusNone: '查不到申請。請確認遊戲名稱和 ID 跟申請時填的一樣。',
+    statusMany: n => `找到 ${n} 份申請，最新的在最上面。`,
+    statusLabel: { pending: '審核中', approved: '已通過', rejected: '未通過' },
+    statusExplain: {
+      pending: '管理層還在看你的申請，有結果會跟你聯繫。',
+      approved: '申請已通過，管理層會跟你聯繫後續安排。',
+      rejected: '這次申請沒有通過。有疑問可以聯繫推薦人或聯盟管理層。'
+    },
+    statusClan: '首選聯盟', statusSubmitted: '提交日期', statusReviewed: '審核日期',
+    okStatus: '之後可以在「查看申請狀態」頁查詢審核進度。',
     routeTitle: '申請流程',
     steps: [
       ['填寫申請', '遊戲名稱、ID、戰力，再附上背包截圖'],
@@ -47,6 +61,19 @@ export const STRINGS = {
     tagline: 'Now recruiting migrants',
     lead: n => `Thinking of moving to State ${n}? Send an application and the leadership will get back to you.`,
     applyCta: 'Apply to migrate',
+    statusCta: 'Check application status',
+    statusTitle: 'Application status', statusIntro: 'Enter the in-game name and ID you used on your application to see where it stands.',
+    statusCheck: 'Check status', statusChecking: 'Checking…', statusNeedBoth: 'Enter both your in-game name and ID',
+    statusFailed: 'Could not check: ', statusNone: 'No application found. Make sure the name and ID match what you entered when you applied.',
+    statusMany: n => `Found ${n} applications, newest first.`,
+    statusLabel: { pending: 'Under review', approved: 'Approved', rejected: 'Not approved' },
+    statusExplain: {
+      pending: 'The leadership is still reviewing your application and will contact you when there is a decision.',
+      approved: 'Your application was approved. The leadership will contact you about next steps.',
+      rejected: 'Your application was not approved this time. Ask your referrer or the alliance leadership if you have questions.'
+    },
+    statusClan: '1st choice', statusSubmitted: 'Submitted', statusReviewed: 'Reviewed',
+    okStatus: 'You can check its progress later on the application status page.',
     routeTitle: 'How it works',
     steps: [
       ['Fill in the application', 'In-game name, ID, power, plus screenshots of your bag'],

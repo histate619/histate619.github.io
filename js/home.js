@@ -1,5 +1,5 @@
-import { CONFIG } from '../config.js?v=20261009090020'
-import { STRINGS, pickLanguage, saveLanguage } from './i18n.js?v=20261009090020'
+import { CONFIG } from '../config.js?v=20261009090817'
+import { STRINGS, pickLanguage, saveLanguage } from './i18n.js?v=20261009090817'
 
 const $ = id => document.getElementById(id)
 const el = (tag, props = {}, ...children) => {
@@ -20,6 +20,7 @@ function render() {
   $('lead').textContent = s.lead(n)
   $('cta').textContent = s.applyCta
   $('cta2').textContent = s.applyCta
+  $('statusCta').textContent = s.statusCta
   $('routeTitle').textContent = s.routeTitle
   $('route').replaceChildren(...s.steps.map(([title, desc]) =>
     el('li', {}, el('b', { textContent: title }), el('span', { textContent: desc }))))

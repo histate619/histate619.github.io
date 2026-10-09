@@ -46,7 +46,10 @@ img { max-width: 100%; }
 .state small { display: block; font: 900 clamp(26px, 6vw, 46px)/1 var(--stencil); letter-spacing: .32em; color: var(--ember); margin-bottom: 6px; }
 .tagline { font: 800 clamp(24px, 5.6vw, 36px)/1.25 var(--body); margin: 18px 0 10px; }
 .lead { color: #d6cfc2; font-size: 17px; max-width: 30em; margin: 0; }
-.hero .button { margin-top: 26px; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+/* 次要按鈕：只描邊；切角會把描邊切斷，所以用直角 */
+.button.ghost { clip-path: none; background: transparent; color: var(--ash); box-shadow: inset 0 0 0 2px #ece6da99; }
+.button.ghost:hover { background: #ece6da1a; }
 
 @media (prefers-reduced-motion: no-preference) {
   .state, .tagline { animation: rise .9s cubic-bezier(.2, .7, .2, 1) both; }
@@ -156,7 +159,7 @@ input[aria-invalid="true"] { border-color: var(--err); }
   .steps li::before { grid-row: span 2; font-size: 48px; margin: 0; }
   .grid { grid-template-columns: 1fr; }
   .hero::after { background: linear-gradient(180deg, #0c0d0ecc 0%, #0c0d0e22 25%, #0c0d0e55 55%, #0c0d0ef2 82%, var(--smoke) 100%); }
-  .hero .button { width: 100%; }
+  .cta-row .button { width: 100%; }
 }
 @media (max-width: 440px) {
   .alliances { gap: 8px; }
@@ -179,3 +182,21 @@ details.help { margin-top: -6px; font-size: 14px; }
 details.help summary { cursor: pointer; color: var(--ember); font-weight: 700; width: fit-content; }
 details.help p { margin: 10px 0 8px; color: var(--muted); }
 details.help img { display: block; width: 100%; max-width: 460px; height: auto; border: 1px solid var(--steel-edge); }
+
+/* 申請狀態查詢 */
+.msg a { color: var(--ash); font-weight: 400; }
+#results:empty { display: none; }
+#results { margin-top: 22px; display: grid; gap: 14px; }
+.lookup-empty { color: var(--muted); text-align: center; margin: 0; }
+.lookup-row { border-left: 4px solid var(--muted); background: var(--smoke); padding: 18px 20px; }
+.lookup-row.is-pending { border-color: var(--ember); }
+.lookup-row.is-approved { border-color: var(--ok); }
+.lookup-row.is-rejected { border-color: var(--err); }
+.lookup-status { display: block; font: 900 34px/1 var(--display); }
+.is-pending .lookup-status { color: var(--ember); }
+.is-approved .lookup-status { color: var(--ok); }
+.is-rejected .lookup-status { color: var(--err); }
+.lookup-explain { margin: 8px 0 14px; color: #d6cfc2; }
+.lookup-row dl { display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; margin: 0; font-size: 14px; }
+.lookup-row dt { color: var(--muted); }
+.lookup-row dd { margin: 0; font-weight: 700; }

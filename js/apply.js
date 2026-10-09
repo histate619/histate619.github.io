@@ -1,8 +1,8 @@
-import { CONFIG, TABLE, BUCKET, isConfigured } from '../config.js?v=20261009090020'
-import { STRINGS, pickLanguage, saveLanguage } from './i18n.js?v=20261009090020'
-import { parsePower, formatPower } from './power.js?v=20261009090020'
-import { compressImage } from './image.js?v=20261009090020'
-import { supabase } from './client.js?v=20261009090020'
+import { CONFIG, TABLE, BUCKET, isConfigured } from '../config.js?v=20261009090817'
+import { STRINGS, pickLanguage, saveLanguage } from './i18n.js?v=20261009090817'
+import { parsePower, formatPower } from './power.js?v=20261009090817'
+import { compressImage } from './image.js?v=20261009090817'
+import { supabase } from './client.js?v=20261009090817'
 
 const $ = id => document.getElementById(id)
 let lang = pickLanguage()
@@ -261,6 +261,7 @@ async function submit(e) {
     showThumbs()
     $('form').querySelectorAll('[data-power]').forEach(updatePowerPreview)
     setMsg(s.ok, 'ok')
+    $('msg').append(document.createElement('br'), Object.assign(document.createElement('a'), { href: 'status.html', textContent: s.okStatus }))
   } catch (err) {
     console.error(err)
     setMsg(s.err + (err.message || String(err)), 'err')
