@@ -1,9 +1,10 @@
-import { CONFIG, TABLE, BUCKET, isConfigured } from '../config.js?v=20261009090817'
-import { supabase } from './client.js?v=20261009090817'
-import { formatPower } from './power.js?v=20261009090817'
-import { toCsv } from './csv.js?v=20261009090817'
-import { pickLanguage, saveLanguage } from './i18n.js?v=20261009090817'
-import { ADMIN_STRINGS } from './admin-i18n.js?v=20261009090817'
+import { CONFIG, TABLE, BUCKET, isConfigured } from '../config.js?v=20261009091803'
+import { supabase } from './client.js?v=20261009091803'
+import { formatPower } from './power.js?v=20261009091803'
+import { toCsv } from './csv.js?v=20261009091803'
+import { pickLanguage, saveLanguage } from './i18n.js?v=20261009091803'
+import { ADMIN_STRINGS } from './admin-i18n.js?v=20261009091803'
+import { loginEmail } from './staff-login.js?v=20261009091803'
 
 const $ = id => document.getElementById(id)
 // 語言偏好與申請頁共用
@@ -55,7 +56,7 @@ $('login').addEventListener('submit', async e => {
   e.preventDefault()
   const fd = new FormData(e.target)
   $('loginMsg').textContent = t().loggingIn
-  const { data, error } = await supabase.auth.signInWithPassword({ email: fd.get('email'), password: fd.get('password') })
+  const { data, error } = await supabase.auth.signInWithPassword({ email: loginEmail(fd.get('email')), password: fd.get('password') })
   if (error) { $('loginMsg').textContent = t().loginFailed(error.message); $('loginMsg').className = 'msg err'; return }
   $('loginMsg').textContent = ''
   await enter(data.user)

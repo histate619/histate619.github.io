@@ -2,7 +2,7 @@
 export const ADMIN_STRINGS = {
   'zh-TW': {
     title: '申請審核', titleClan: c => `${c} 申請審核`,
-    email: 'Email', password: '密碼', login: '登入', loggingIn: '登入中…', loginFailed: m => `登入失敗：${m}`,
+    email: 'Email', account: '帳號', accountHint: '聯盟簡稱（如 AxY）或 Email', password: '密碼', login: '登入', loggingIn: '登入中…', loginFailed: m => `登入失敗：${m}`,
     notConfigured: 'config.js 尚未填入 Supabase 設定。',
     notStaff: e => `此帳號（${e}）不在審核名單內。`,
     staffCheckFailed: m => `登入成功，但讀取審核名單失敗：${m}`,
@@ -35,7 +35,7 @@ export const ADMIN_STRINGS = {
   },
   en: {
     title: 'Application review', titleClan: c => `${c} application review`,
-    email: 'Email', password: 'Password', login: 'Log in', loggingIn: 'Logging in…', loginFailed: m => `Login failed: ${m}`,
+    email: 'Email', account: 'Account', accountHint: 'Alliance tag (e.g. AxY) or email', password: 'Password', login: 'Log in', loggingIn: 'Logging in…', loginFailed: m => `Login failed: ${m}`,
     notConfigured: 'Supabase settings are missing from config.js.',
     notStaff: e => `This account (${e}) is not on the reviewer list.`,
     staffCheckFailed: m => `Logged in, but could not read the reviewer list: ${m}`,

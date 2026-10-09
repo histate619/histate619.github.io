@@ -8,8 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Big+Shoulders+Stencil+Display:wght@900&family=Noto+Sans+TC:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" href="style.css?v=20261009090817">
-<link rel="stylesheet" href="admin.css?v=20261009090817">
+<link rel="stylesheet" href="style.css?v=20261009091803">
+<link rel="stylesheet" href="admin.css?v=20261009091803">
 </head>
 <body>
 <main class="wrap wide">
@@ -22,7 +22,7 @@
   </div>
 
   <form id="login" class="panel login" hidden>
-    <label><span data-i18n="email">Email</span> <input name="email" type="email" autocomplete="username" required></label>
+    <label><span data-i18n="account">帳號</span> <input name="email" type="text" autocomplete="username" autocapitalize="off" spellcheck="false" data-i18n-placeholder="accountHint" required></label>
     <label><span data-i18n="password">密碼</span> <input name="password" type="password" autocomplete="current-password" required></label>
     <button type="submit" data-i18n="login">登入</button>
     <div class="msg" id="loginMsg"></div>
@@ -54,6 +54,6 @@
   <div class="msg" id="msg"></div>
 </main>
 <dialog id="viewer"><img id="viewerImg" alt=""><button class="secondary" id="viewerClose" type="button" data-i18n="close">關閉</button></dialog>
-<script type="module" src="js/admin.js?v=20261009090817"></script>
+<script type="module" src="js/admin.js?v=20261009091803"></script>
 </body>
 </html>

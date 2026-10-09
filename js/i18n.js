@@ -1,4 +1,4 @@
-import { CONFIG } from '../config.js?v=20261009090817'
+import { CONFIG } from '../config.js?v=20261009091803'
 
 export const STRINGS = {
   'zh-TW': {
