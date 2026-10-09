@@ -15,7 +15,8 @@ export const CONFIG = {
     { tag: 'LNT', name: 'The Northern Lights', badge: 'assets/badges/LNT.png' },
     { tag: 'BL99', name: 'BLOOD SQUAD', badge: 'assets/badges/BL99.png' }
   ],
-  // 瞭望塔 1–30，之後是工業 1–3（資料庫存 31–33）
+  // 瞭望塔 21–30（移民至少 20 級，用戶 2026-10-09 指定從 21 起），之後是工業 1–3（資料庫存 31–33）
+  minWatchtower: 21,
   maxWatchtower: 30,
   industrialLevels: 3,
   maxImages: 3

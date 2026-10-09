@@ -1,8 +1,8 @@
-import { CONFIG, TABLE, BUCKET, isConfigured } from '../config.js?v=20261009091803'
-import { STRINGS, pickLanguage, saveLanguage } from './i18n.js?v=20261009091803'
-import { parsePower, formatPower } from './power.js?v=20261009091803'
-import { compressImage } from './image.js?v=20261009091803'
-import { supabase } from './client.js?v=20261009091803'
+import { CONFIG, TABLE, BUCKET, isConfigured } from '../config.js?v=20261009094321'
+import { STRINGS, pickLanguage, saveLanguage } from './i18n.js?v=20261009094321'
+import { parsePower, formatPower } from './power.js?v=20261009094321'
+import { compressImage } from './image.js?v=20261009094321'
+import { supabase } from './client.js?v=20261009094321'
 
 const $ = id => document.getElementById(id)
 let lang = pickLanguage()
@@ -114,7 +114,7 @@ function fieldEl(f, s) {
   } else if (f.type === 'watchtower') {
     input = document.createElement('select')
     input.append(new Option(s.select, ''))
-    for (let i = 1; i <= CONFIG.maxWatchtower; i++) input.append(new Option(String(i), String(i)))
+    for (let i = CONFIG.minWatchtower ?? 1; i <= CONFIG.maxWatchtower; i++) input.append(new Option(String(i), String(i)))
     // 30 級之後是工業 1–3，存成 31–33
     for (let n = 1; n <= (CONFIG.industrialLevels ?? 0); n++) input.append(new Option(s.industrial(n), String(CONFIG.maxWatchtower + n)))
   } else if (f.type === 'textarea') {
