@@ -1,10 +1,10 @@
-import { CONFIG, TABLE, BUCKET, isConfigured } from '../config.js?v=20261010021826'
-import { supabase } from './client.js?v=20261010021826'
-import { formatPower } from './power.js?v=20261010021826'
-import { toCsv } from './csv.js?v=20261010021826'
-import { pickLanguage, saveLanguage, LANGS, setDocumentLanguage } from './i18n.js?v=20261010021826'
-import { ADMIN_STRINGS } from './admin-i18n.js?v=20261010021826'
-import { loginEmail } from './staff-login.js?v=20261010021826'
+import { CONFIG, TABLE, BUCKET, isConfigured } from '../config.js?v=20261010023521'
+import { supabase } from './client.js?v=20261010023521'
+import { formatPower } from './power.js?v=20261010023521'
+import { toCsv } from './csv.js?v=20261010023521'
+import { pickLanguage, saveLanguage, LANGS, setDocumentLanguage } from './i18n.js?v=20261010023521'
+import { ADMIN_STRINGS } from './admin-i18n.js?v=20261010023521'
+import { loginEmail } from './staff-login.js?v=20261010023521'
 
 const $ = id => document.getElementById(id)
 // 語言偏好與申請頁共用

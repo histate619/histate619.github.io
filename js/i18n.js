@@ -1,4 +1,4 @@
-import { CONFIG } from '../config.js?v=20261010021826'
+import { CONFIG } from '../config.js?v=20261010023521'
 
 export const STRINGS = {
   'zh-TW': {
@@ -228,13 +228,24 @@ export function setDocumentLanguage(lang) {
   document.documentElement.dir = LANGS[lang].dir
 }
 
-// 預設規則（用戶指定不變）：瀏覽器中文 → 繁中，其他 → 英文；韓文、阿拉伯文只能手動選
+// 優先順序：網址 ?lang=ko（分享連結用，會記住，之後點到其他頁面也維持）→ 上次手動選的 → 預設規則。
+// 預設規則（用戶指定不變）：瀏覽器中文 → 繁中，其他 → 英文
 export function pickLanguage() {
+  const fromUrl = langFromUrl(location.search)
+  if (fromUrl) { saveLanguage(fromUrl); return fromUrl }
   try {
     const saved = localStorage.getItem('apply-lang')
     if (saved && STRINGS[saved]) return saved
   } catch {}
   return /^zh/i.test(navigator.language) ? 'zh-TW' : 'en'
+}
+
+// ?lang=ko / ar / en / zh（zh、zh-TW、tw 都算繁中），大小寫不拘；不認得的值忽略
+export function langFromUrl(search) {
+  const v = new URLSearchParams(search).get('lang')?.trim().toLowerCase()
+  if (!v) return null
+  if (v === 'zh' || v === 'zh-tw' || v === 'tw') return 'zh-TW'
+  return STRINGS[v] ? v : null
 }
 
 export function saveLanguage(lang) {
