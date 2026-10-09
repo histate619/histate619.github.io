@@ -108,7 +108,7 @@ export const ADMIN_STRINGS = {
     whoAlliance: (c, e) => `حساب تحالف ${c} (${e})`, who: (e, r) => `${e} (${r})`,
     allStatus: 'كل الحالات', allClans: 'كل التحالفات',
     sortPower: 'القوة الإجمالية (من الأعلى)', sortNew: 'الأحدث أولًا', sortOld: 'الأقدم أولًا',
-    search: 'ابحث بالاسم / المعرّف / المرشِّح', reload: 'تحديث', export: 'تصدير CSV', logout: 'تسجيل الخروج', close: 'إغلاق',
+    search: 'ابحث بالاسم / المعرّف (ID) / الداعي', reload: 'تحديث', export: 'تصدير CSV', logout: 'تسجيل الخروج', close: 'إغلاق',
     loading: 'جارٍ التحميل…', loadFailed: m => `تعذّر التحميل: ${m}`, count: (n, total) => `عرض ${n} من ${total}`,
     status: { pending: 'قيد المراجعة', approved: 'مقبول', rejected: 'مرفوض' },
     faction: { fighter: 'Fighter', shooter: 'Shooter', rider: 'Rider', none: 'بلا فئة ثابتة', unknown: 'لا يعرف' },
@@ -116,19 +116,19 @@ export const ADMIN_STRINGS = {
     leadership: { r5: 'كان R5', r4: 'كان R4', none: 'بلا خبرة قيادية' },
     any: 'بلا تفضيل', industrial: n => `Industrial ${n}`,
     meta: {
-      state: v => `الولاية ${v}`, currentClan: v => `التحالف الحالي ${v}`, preferred: v => `الخيار الأول ${v}`, backup: v => `الخيار الثاني ${v}`,
-      referrer: v => `المرشِّح ${v}`, watchtower: v => `برج المراقبة ${v}`, faction: v => `الفئة ${v}`,
+      state: v => `الخادم ${v}`, currentClan: v => `التحالف الحالي ${v}`, preferred: v => `الخيار الأول ${v}`, backup: v => `الخيار الثاني ${v}`,
+      referrer: v => `دعاه ${v}`, watchtower: v => `برج المراقبة ${v}`, faction: v => `الفئة ${v}`,
       hours: v => `النشاط ${v}`, events: v => `الفعاليات: ${v}`, noAgree: 'لم يوافق على القواعد'
     },
-    march1: 'الأولى', march2: 'الثانية', march3: 'الثالثة', kills: 'القتلى',
+    march1: 'الأولى', march2: 'الثانية', march3: 'الثالثة', kills: 'القتلات',
     note: 'ملاحظة (يراها المراجعون الآخرون)', save: 'حفظ', reviewedAt: t => `رُوجع ${t}`,
     readonlyAny: 'اختار المتقدم «بلا تفضيل». للعرض فقط', readonlySecond: c => `أنت الخيار الثاني (الأول ${c}). للعرض فقط`,
     saveFailed: m => `تعذّر الحفظ: ${m}`, noPermission: 'لا صلاحية', updated: (u, s) => `تم التحديث: ${u} ← ${s}`,
     thumbsFailed: m => `تعذّر تحميل لقطات الشاشة: ${m}`, screenshot: 'لقطة شاشة', yes: 'نعم', no: 'لا',
     csv: {
-      created: 'وقت التقديم', status: 'الحالة', username: 'الاسم في اللعبة', gameId: 'المعرّف في اللعبة', state: 'الولاية الحالية', currentClan: 'التحالف الحالي',
-      preferred: 'الخيار الأول', backup: 'الخيار الثاني', referrer: 'المرشِّح', watchtower: 'برج المراقبة', power: 'القوة الإجمالية', powerShown: 'القوة الإجمالية (مختصرة)',
-      march1: 'قوة المسيرة الأولى', march2: 'قوة المسيرة الثانية', march3: 'قوة المسيرة الثالثة', kills: 'عدد القتلى', faction: 'الفئة الرئيسية', hours: 'أوقات النشاط (ST)',
+      created: 'وقت التقديم', status: 'الحالة', username: 'الاسم في اللعبة', gameId: 'المعرّف في اللعبة (ID)', state: 'الخادم الحالي', currentClan: 'التحالف الحالي',
+      preferred: 'الخيار الأول', backup: 'الخيار الثاني', referrer: 'الداعي', watchtower: 'برج المراقبة', power: 'القوة الإجمالية', powerShown: 'القوة الإجمالية (مختصرة)',
+      march1: 'قوة المسيرة الأولى', march2: 'قوة المسيرة الثانية', march3: 'قوة المسيرة الثالثة', kills: 'عدد الأعداء المقتولين', faction: 'الفئة الرئيسية', hours: 'أوقات النشاط (ST)',
       events: 'المشاركة في الفعاليات', leadership: 'الخبرة القيادية', agree: 'الموافقة على القواعد', reason: 'السبب', images: 'عدد اللقطات', note: 'ملاحظة', language: 'اللغة'
     }
   }

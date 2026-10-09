@@ -1,5 +1,5 @@
-import { CONFIG } from '../config.js?v=20261010023521'
-import { STRINGS, pickLanguage, saveLanguage, setDocumentLanguage } from './i18n.js?v=20261010023521'
+import { CONFIG } from '../config.js?v=20261010035936'
+import { STRINGS, pickLanguage, saveLanguage, setDocumentLanguage } from './i18n.js?v=20261010035936'
 
 const $ = id => document.getElementById(id)
 const el = (tag, props = {}, ...children) => {

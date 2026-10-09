@@ -1,6 +1,6 @@
-import { CONFIG, isConfigured } from '../config.js?v=20261010023521'
-import { STRINGS, pickLanguage, saveLanguage, LANGS, setDocumentLanguage } from './i18n.js?v=20261010023521'
-import { supabase } from './client.js?v=20261010023521'
+import { CONFIG, isConfigured } from '../config.js?v=20261010035936'
+import { STRINGS, pickLanguage, saveLanguage, LANGS, setDocumentLanguage } from './i18n.js?v=20261010035936'
+import { supabase } from './client.js?v=20261010035936'
 
 const $ = id => document.getElementById(id)
 const el = (tag, props = {}, ...children) => {
