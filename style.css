@@ -1,0 +1,181 @@
+/* 視覺主題：末日廢城。照片撐氛圍，軍用模板字當標題，火光橘是唯一強調色。 */
+:root {
+  --smoke: #0c0d0e;        /* 頁面底色 */
+  --steel: #17191b;        /* 面板 */
+  --steel-edge: #2e3235;   /* 邊線、輸入框邊 */
+  --ash: #ece6da;          /* 主要文字 */
+  --muted: #9d978d;        /* 次要文字 */
+  --ember: #ff6a1f;        /* 火光橘：主要行動、焦點、數字 */
+  --ok: #6cc785;
+  --err: #ff5a4a;
+  --stencil: "Big Shoulders Stencil Display", "Big Shoulders Display", Impact, sans-serif;
+  --display: "Big Shoulders Display", "Noto Sans TC", Impact, sans-serif;
+  --body: "Noto Sans TC", "PingFang TC", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { background: var(--smoke); }
+body { margin: 0; min-height: 100vh; background: var(--smoke); color: var(--ash); font: 16px/1.65 var(--body); -webkit-font-smoothing: antialiased; }
+a { color: var(--ember); }
+:focus-visible { outline: 3px solid var(--ember); outline-offset: 3px; }
+img { max-width: 100%; }
+
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+/* ───── 頂列 ───── */
+.topbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 18px 0; position: relative; z-index: 2; }
+.topbar a { color: var(--ash); text-decoration: none; font-weight: 700; font-size: 15px; }
+.topbar a:hover { color: var(--ember); }
+.topbar select { width: auto; margin-left: auto; padding: 7px 10px; font-size: 14px; background: #0009; border-color: #ffffff30; backdrop-filter: blur(4px); }
+
+/* ───── 首頁主視覺 ───── */
+.hero { position: relative; min-height: min(100svh, 920px); display: flex; flex-direction: column; overflow: hidden; isolation: isolate; }
+.hero-bg { position: absolute; inset: 0; z-index: -2; }
+.hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; display: block; }
+.hero::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(180deg, #0c0d0ecc 0%, #0c0d0e33 22%, #0c0d0e00 45%, #0c0d0ecc 78%, var(--smoke) 100%),
+    linear-gradient(90deg, #0c0d0ee6 0%, #0c0d0e80 40%, #0c0d0e00 70%);
+}
+.hero .wrap { width: 100%; display: flex; flex-direction: column; flex: 1; }
+.hero-copy { margin-top: auto; padding-bottom: clamp(40px, 8vh, 88px); max-width: 640px; }
+.game { color: var(--ash); opacity: .8; font-weight: 600; font-size: 15px; margin: 0 0 4px; }
+.state { margin: 0; font: 900 clamp(120px, 34vw, 200px)/.82 var(--stencil); letter-spacing: .01em; color: var(--ash); text-shadow: 0 6px 40px #000c; }
+.state small { display: block; font: 900 clamp(26px, 6vw, 46px)/1 var(--stencil); letter-spacing: .32em; color: var(--ember); margin-bottom: 6px; }
+.tagline { font: 800 clamp(24px, 5.6vw, 36px)/1.25 var(--body); margin: 18px 0 10px; }
+.lead { color: #d6cfc2; font-size: 17px; max-width: 30em; margin: 0; }
+.hero .button { margin-top: 26px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .state, .tagline { animation: rise .9s cubic-bezier(.2, .7, .2, 1) both; }
+  .tagline { animation-delay: .15s; }
+  @keyframes rise { from { opacity: 0; transform: translateY(24px); } }
+}
+
+/* ───── 按鈕 ───── */
+button, .button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  font: 800 17px/1.2 var(--body); padding: 16px 28px; border: 0; border-radius: 0;
+  background: var(--ember); color: #160800; cursor: pointer; text-decoration: none;
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+}
+button:hover, .button:hover { background: #ff7d3a; }
+button.secondary {
+  clip-path: none; background: transparent; color: var(--ash); border: 1px solid var(--steel-edge);
+  font-weight: 700; font-size: 14px; padding: 8px 12px;
+}
+button.secondary:hover { border-color: var(--muted); background: transparent; }
+button:disabled { opacity: .4; cursor: not-allowed; }
+.block { display: flex; width: 100%; }
+
+/* ───── 區塊 ───── */
+section { padding: 72px 0 0; }
+h1, h2, h3 { margin: 0; }
+h2 { font: 900 clamp(34px, 6vw, 52px)/1 var(--display); text-transform: uppercase; letter-spacing: .01em; margin-bottom: 28px; }
+
+/* 申請流程：三個階段，是真正的順序 */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--steel-edge); border: 2px solid var(--steel-edge); }
+.steps li { background: var(--steel); padding: 26px 24px 28px; counter-increment: step; }
+.steps li::before { content: counter(step, decimal-leading-zero); display: block; font: 900 64px/1 var(--stencil); color: var(--ember); margin-bottom: 14px; }
+.steps b { display: block; font-size: 19px; margin-bottom: 6px; }
+.steps span { color: var(--muted); font-size: 15px; }
+
+/* 聯盟：徽章放在淺色布章上（原圖白底，去不掉） */
+.alliances { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.alliances li { display: flex; align-items: center; gap: 14px; padding: 14px; background: var(--steel); border-left: 3px solid var(--steel-edge); min-width: 0; }
+.alliances li:hover { border-left-color: var(--ember); }
+.patch { flex: none; width: 52px; height: 58px; background: #f3f0ea; border-radius: 6px; display: grid; place-items: center; overflow: hidden; }
+.patch img { width: 46px; height: 52px; object-fit: contain; display: block; }
+.alliances .tag { display: block; font: 900 24px/1 var(--display); letter-spacing: .02em; }
+.alliances .name { display: block; color: var(--muted); font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-top: 4px; }
+.alliances .meta-box { min-width: 0; }
+
+/* 收尾召喚 */
+.final { position: relative; margin-top: 88px; padding: 96px 0; isolation: isolate; overflow: hidden; }
+.photo-bg { position: absolute; inset: 0; z-index: -2; }
+.photo-bg img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.final::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, var(--smoke) 0%, #0c0d0eb3 30%, #0c0d0eb3 70%, var(--smoke) 100%); }
+.final h2 { margin-bottom: 12px; }
+.final p { color: #d6cfc2; max-width: 30em; margin: 0 0 26px; }
+
+footer { padding: 36px 0 48px; color: var(--muted); font-size: 13px; display: flex; flex-wrap: wrap; gap: 6px 24px; justify-content: space-between; }
+footer a { color: var(--muted); }
+
+/* ───── 申請頁頁首 ───── */
+.page-head { position: relative; isolation: isolate; overflow: hidden; padding-bottom: 96px; }
+.page-head .photo-bg img { object-position: 50% 60%; }
+.page-head::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, #0c0d0ecc, #0c0d0e99 50%, var(--smoke)); }
+.page-title { margin: 28px 0 0; font: 900 clamp(48px, 12vw, 96px)/.85 var(--stencil); }
+.page-title small { display: block; font: 900 clamp(18px, 4vw, 26px)/1 var(--stencil); letter-spacing: .32em; color: var(--ember); margin-bottom: 8px; }
+.page-sub { font: 800 clamp(22px, 5vw, 30px)/1.3 var(--body); margin: 14px 0 6px; }
+.page-head .lead { font-size: 16px; }
+
+/* ───── 表單 ───── */
+.form-wrap { max-width: 760px; margin: -56px auto 0; padding: 0 16px 80px; position: relative; }
+.panel { background: var(--steel); border-top: 3px solid var(--ember); padding: 26px 22px 24px; box-shadow: 0 30px 60px #0009; }
+fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+fieldset + fieldset { margin-top: 30px; padding-top: 26px; border-top: 1px solid var(--steel-edge); }
+legend { float: left; width: 100%; padding: 0; margin-bottom: 16px; font: 900 26px/1 var(--display); }
+legend + .grid { clear: both; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.full { grid-column: 1 / -1; }
+label { display: grid; gap: 6px; font-weight: 700; font-size: 14px; align-content: start; }
+label small { color: var(--muted); font-weight: 400; }
+.req { color: var(--ember); }
+input, select, textarea {
+  width: 100%; background: var(--smoke); color: var(--ash); border: 1px solid var(--steel-edge);
+  border-radius: 2px; padding: 12px; font: 16px/1.4 var(--body);
+}
+input:focus, select:focus, textarea:focus { border-color: var(--ember); outline: none; box-shadow: 0 0 0 3px #ff6a1f30; }
+input::placeholder, textarea::placeholder { color: #67635c; }
+input[aria-invalid="true"] { border-color: var(--err); }
+/* 自繪檔案按鈕：原生 input 視覺隱藏但保留可聚焦、可讀 */
+.file-picker { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; padding: 14px; border: 1px dashed var(--steel-edge); background: var(--smoke); cursor: pointer; }
+.file-picker:hover, .file-picker.drag { border-color: var(--ember); }
+.file-picker input { position: absolute; width: 1px; height: 1px; opacity: 0; overflow: hidden; clip: rect(0 0 0 0); }
+.file-button { padding: 9px 16px; border: 1px solid var(--ember); color: var(--ember); font-weight: 800; font-size: 15px; }
+.file-picker input:focus-visible + .file-button { outline: 3px solid var(--ember); outline-offset: 2px; }
+.file-status { color: var(--muted); font-weight: 400; font-size: 14px; }
+.preview { color: var(--ember); font-weight: 700; font-size: 13px; min-height: 1.2em; }
+.preview.bad { color: var(--err); }
+.submit { margin-top: 28px; }
+.msg { text-align: center; margin-top: 14px; font-weight: 700; min-height: 1.4em; }
+.msg.ok { color: var(--ok); }
+.msg.err { color: var(--err); }
+.thumbs { display: flex; gap: 8px; flex-wrap: wrap; }
+.thumbs img { width: 76px; height: 76px; object-fit: cover; border: 1px solid var(--steel-edge); }
+
+@media (max-width: 900px) {
+  .alliances { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 700px) {
+  .steps { grid-template-columns: 1fr; }
+  .steps li { display: grid; grid-template-columns: auto 1fr; column-gap: 18px; padding: 20px; }
+  .steps li::before { grid-row: span 2; font-size: 48px; margin: 0; }
+  .grid { grid-template-columns: 1fr; }
+  .hero::after { background: linear-gradient(180deg, #0c0d0ecc 0%, #0c0d0e22 25%, #0c0d0e55 55%, #0c0d0ef2 82%, var(--smoke) 100%); }
+  .hero .button { width: 100%; }
+}
+@media (max-width: 440px) {
+  .alliances { gap: 8px; }
+  .alliances li { gap: 10px; padding: 10px; }
+  .patch { width: 40px; height: 46px; }
+  .patch img { width: 36px; height: 40px; }
+  .alliances .tag { font-size: 20px; }
+}
+
+/* 申請頁頁首與表單同寬對齊 */
+.page-head .wrap { max-width: 760px; padding: 0 16px; }
+
+/* 同意框：勾選框與文字同一行 */
+label.check { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; cursor: pointer; }
+label.check input { width: 20px; height: 20px; flex: none; margin: 2px 0 0; padding: 0; accent-color: var(--ember); }
+label small.note { font-size: 13px; line-height: 1.45; }
+
+/* 「找不到遊戲 ID？」說明：預設收合 */
+details.help { margin-top: -6px; font-size: 14px; }
+details.help summary { cursor: pointer; color: var(--ember); font-weight: 700; width: fit-content; }
+details.help p { margin: 10px 0 8px; color: var(--muted); }
+details.help img { display: block; width: 100%; max-width: 460px; height: auto; border: 1px solid var(--steel-edge); }
