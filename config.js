@@ -1,7 +1,7 @@
 // ⚠️ 這裡只放可以公開的設定。service_role / secret key 絕對不能放這裡。
 export const CONFIG = {
-  supabaseUrl: '',            // 例：https://xxxx.supabase.co
-  supabasePublishableKey: '', // 例：sb_publishable_xxx（或舊版 anon key）
+  supabaseUrl: 'https://kprcsiosxbhdihgojwbv.supabase.co',            // 例：https://xxxx.supabase.co
+  supabasePublishableKey: 'sb_publishable_YztJsWh9EbVXCCGaKKgOhw_S25VAgZ8', // 例：sb_publishable_xxx（或舊版 anon key）
   stateName: '619',          // 顯示為「STATE 619」
   // 本州聯盟：tag 為申請表下拉的值（取聯盟簡稱），name 為全名。依戰力排名順序。
   // 來源：用戶 2026-10-08 提供的聯盟排行截圖；徽章也是從該截圖裁出。
