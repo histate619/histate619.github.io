@@ -1,4 +1,4 @@
-import { CONFIG } from '../config.js?v=20261009094321'
+import { CONFIG } from '../config.js?v=20261009101303'
 
 export const STRINGS = {
   'zh-TW': {
@@ -24,8 +24,8 @@ export const STRINGS = {
     routeTitle: '申請流程',
     steps: [
       ['填寫申請', '遊戲名稱、ID、戰力，再附上背包截圖'],
-      ['管理層審核', '每份申請都會由管理層查看'],
-      ['等待聯繫', '審核後管理層會跟你聯繫移民安排']
+      ['聯盟審核', '你選的聯盟和州管理層會看你的申請'],
+      ['查看結果', '隨時用遊戲名稱和 ID 到「查看申請狀態」查進度；通過後會有人聯繫你安排移民']
     ],
     alliancesTitle: n => `${n} 州的聯盟`,
     footer: n => `Dark War: Survival 第 ${n} 州`,
@@ -77,8 +77,8 @@ export const STRINGS = {
     routeTitle: 'How it works',
     steps: [
       ['Fill in the application', 'In-game name, ID, power, plus screenshots of your bag'],
-      ['Leadership review', 'Every application is read by the leadership'],
-      ['Hear back', 'After review, the leadership contacts you about the move']
+      ['Alliance review', 'The alliance you chose and the state leadership review your application'],
+      ['Check the result', 'Check progress any time on the status page with your in-game name and ID. If approved, someone will contact you about the move']
     ],
     alliancesTitle: n => `Alliances in State ${n}`,
     footer: n => `Dark War: Survival, State ${n}`,
